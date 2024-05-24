@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color:#F2EDD7 ;
+    --second-color: #755139;
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Montserrat', sans-serif;
+    --normal-font-size: .938rem;
+}
+  
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--first-color);
+}
+
+.header h1{
+    padding-left: 2rem;
+    padding-top: 2rem;
+    color: var(--second-color);
+}
+
+.nav{
+    display: flex;
+    column-gap: 3rem;
+    padding-left: 35rem;
+    padding-top: 0.1rem;
+    padding-bottom: 5rem;
+    color: var(--second-color);
+}
+
+.nav_list a{
+    text-decoration: none;
+    color: var(--second-color);
+    display: inline-block;
+}
+
+.nav_list a:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.nav_list i{
+    padding-right: .3rem;
+    color: var(--second-color);
+}
+
+.container{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    position: relative;
+}
+
+.profile_info{
+    display: flex;
+    padding-bottom: 8rem;
+}
+
+.profile_text h2{
+    padding-top: 6rem;
+    color: var(--second-color);
+}
+
+.profile_text p{
+    text-align: justify;
+    padding-right: 10rem;
+    line-height: 2rem;
+    color: var(--second-color);
+}
+
+.profile_img img{
+    float: right;
+    width: 450px;
+    border-radius: 40% 0 40% 0;
+    box-shadow: 0 0 20px 5px var(--second-color);
+}
+
+.profile_detail{
+    border: 3px dotted var(--second-color);
+    border-radius: 2rem;
+}
+
+.detail_info h1{
+    text-align: center;
+    margin-top: 4rem;
+    color: var(--second-color);
+}
+
+.detail_info p{
+    text-align:  justify;
+    margin: 3rem;
+    line-height: 2rem;
+    color: var(--second-color);
+}
+
+/* The actual timeline (the vertical ruler) */
+.container_timeline{
+    padding-top: 3rem;
+    color: var(--second-color);
+}
+
+.main_timeline {
+    position: relative;
+}
+  
+/* The actual timeline (the vertical ruler) */
+.main_timeline::after {
+    content: ""; /*for vertical ruler*/
+    position: absolute;
+    width: 6px;
+    background-color: var(--second-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+}
+  
+/* Container around content */
+.timeline {
+    position: relative;
+    width: 50%;
+    line-height: 2rem;
+    text-align: justify;
+}
+  
+/* The circles on the timeline */
+.timeline::after {
+    content: ""; /*for vertical ruler*/
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    background-color: var(--second-color);
+    border: 5px solid #c7885f;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1; /*to get forward*/
+}
+  
+/* Place the container to the left */
+.left {
+    padding: 0px 50px 20px 0px;
+    left: 0;
+}
+  
+/* Place the container to the right */
+.right {
+    padding: 0px 0px 20px 50px;
+    left: 50%;
+}
+  
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--second-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--second-color);
+}
+  
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #c7885f;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #c7885f;
+}
+  
+/* Fix the circle for containers on the right side */
+  .right::after {
+    left: -12px;
+}
+
+.timeline .button{
+    background-color: var(--second-color);
+    text-decoration: none;
+    padding: 15px;
+    color: var(--first-color);
+}
+
+.timeline .button:hover{
+    background-color: #472e1d;
+}
+
+.card-body i{
+    padding-left: .5rem;
+}
+
+hr{
+    margin-top: 1rem;
+    border: 1px dotted var(--second-color);
+}
+
+.skills h2{
+    text-align: center;
+    padding-top: 2rem;
+    color: var(--second-color);
+}
+
+.skills h4{
+    text-align: center;
+    color: var(--second-color);
+    padding: 1.5rem 0 2.5rem 0;
+}
+
+.skills_container{
+    text-align: center;
+}
+
+.skills_data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: .75rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 10px 2px var(--second-color);
+}
+
+.skills_icon{
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: var(--second-color);
+}
+
+.skills_names{
+    display: flex;
+    align-items: center;
+}
+
+.skills_bar{
+    position: absolute; /*Absolute can adjust percentage*/
+    left: 0;
+    bottom: 0;
+    background-color: var(--second-color);
+    height: .45rem;
+    border-radius: .5rem;
+}
+
+.skills_html{
+    width: 90%;
+}
+
+.skills_css{
+    width: 75%;
+}
+
+.skills_js{
+    width: 50%;
+}
+
+.skills_bs{
+    width: 95%;
+}
+
+.skills_design{
+    width: 65%;
+}
+
+.contact_img img{
+    width: 400px;
+}
+
+.contact_info{
+    display: flex;
+    margin-left: 3rem;
+    color: var(--second-color);
+}
+
+.contact_text h2{
+    padding-left: 13rem;
+    padding-bottom: 1.5rem;
+}
+
+.contact_textlogo{
+    border: 3px solid var(--second-color);
+    padding: 5rem 10rem;
+    line-height: 3rem;
+    font-size: 1rem;
+}
+
+.contact_textlogo i{
+    font-size: 1.15rem;
+    padding-right: 1rem;
+}
+
+.social_media{
+    text-align: center;
+}
+
+.s_m a{
+    margin-left: 1rem;
+    font-size: 1.25rem;
+    color: var(--second-color);
+}
+
+.s_m a:hover{
+    font-size: 1.8rem;
+    transition: .3s;
+}
+
+::-webkit-scrollbar{
+    width: 0.85rem;
+    background-color: #dadada;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: var(--mb-0-5);
+    background-color: var(--second-color);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #472e1d;
+}
+  
+/* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 700px) {
+    /* Place the timelime to the left */
+    .main-timeline::after {
+      left: 31px;
+    }
+  
+    /* Full-width containers */
+    .timeline {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+      left: 18px;
+    }
+  
+    .left::before {
+      right: auto;
+    }
+  
+    /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+}
+
+/*@media screen and (max-width: 1024px){
+    .nav{
+        column-gap: 1rem;
+        padding-left: 10rem;
+        padding-top: 2rem;
+    }
+    
+    .profile_img img{
+        width: 20rem;
+       margin-right: 17rem;
+    }
+
+    .profile_text h2{
+        padding-top: .5rem;
+    }
+    
+    .profile_text p{
+        text-align: justify;
+        padding-right: 5rem;
+        line-height: 1.5rem;
+    }
+}*/
